@@ -1,8 +1,5 @@
 package dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import dto.Admin;
@@ -11,40 +8,7 @@ import dto.Admin;
  *@author Akihiro Nakamura
  *管理者テーブルに接続するDAOクラス
  */
-public class AdminDAO {
-
-	/**
-	 *特定のデータベースとの接続
-	 */
-	private Connection con;
-
-	/**
-	 *SQL文の解析と実行
-	 */
-	private PreparedStatement ps;
-
-	/**
-	 *SQL実行結果の取得
-	 */
-	private ResultSet rs;
-
-	/**
-	 *@throws SQLException
-	 *データベースと接続するメソッド
-	 */
-	public void dbConnect() throws SQLException {
-		ConnectionManager cm = new ConnectionManager();
-		con = cm.connect();
-	}
-
-	/**
-	 *@throws SQLException
-	 *データベースとの接続を切断するメソッド
-	 */
-	public void dbClose() throws SQLException {
-		ConnectionManager cm = new ConnectionManager();
-		cm.close(con);
-	}
+public class AdminDAO extends BaseDAO {
 
 	/**
 	 *@param employee_is 社員ID
