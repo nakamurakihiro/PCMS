@@ -1,8 +1,5 @@
 package dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,40 +10,7 @@ import dto.Report;
  *@author Akihiro Nakamura
  *工数テーブルに接続するDAOクラス
  */
-public class ReportDAO {
-
-	/**
-	 *特定のデータベースとの接続
-	 */
-	private Connection con;
-
-	/**
-	 *SQL文の解析と実行
-	 */
-	private PreparedStatement ps;
-
-	/**
-	 *SQL実行結果の取得
-	 */
-	private ResultSet rs;
-
-	/**
-	 *@throws SQLException
-	 *データベースと接続するメソッド
-	 */
-	public void dbConnect() throws SQLException {
-		ConnectionManager cm = new ConnectionManager();
-		con = cm.connect();
-	}
-
-	/**
-	 *@throws SQLException
-	 *データベースとの接続を切断するメソッド
-	 */
-	public void dbClose() throws SQLException {
-		ConnectionManager cm = new ConnectionManager();
-		cm.close(con);
-	}
+public class ReportDAO extends BaseDAO {
 
 	/**
 	 *リストに格納
