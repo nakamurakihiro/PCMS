@@ -14,6 +14,7 @@
 Product Cost Management System  
 それぞれの頭文字を取って、"PCMS"　というシステムを開発しました。  
 
+URL : [https://pcms-db.herokuapp.com/](https://pcms-db.herokuapp.com/)
 ## 制作背景　　
 
 私は高校卒業後から製造業に従事しており、日々の業務の中で工数短縮を徹底してきました。  
@@ -35,8 +36,7 @@ Product Cost Management System
 Javaの仕組みや理解を深めるために、フレームワークは使わずに実装しました。  
 
 ## 使用画面イメージ  
-![README](https://user-images.githubusercontent.com/75915650/128176053-f741ac24-ce40-4851-aea2-24371506bbe4.png)
-
+![README](https://user-images.githubusercontent.com/75915650/132525664-eeb07483-72ba-46fd-a30d-0a626586d6e6.png)
 
 ## 機能一覧
 〇基本機能  
