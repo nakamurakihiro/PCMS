@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="dto.Employee"%>
-<%@ page import="dto.Report"%>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="java.util.List"%>
 
 <%
 //セッションスコープに保存された社員情報を取得
