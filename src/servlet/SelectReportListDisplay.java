@@ -95,7 +95,7 @@ public class SelectReportListDisplay extends HttpServlet{
 
 		if(employee != null && rlist != null){
 			//選択した社員の工数記録一覧表示
-			RequestDispatcher disp = request.getRequestDispatcher("select_work_load.jsp");
+			RequestDispatcher disp = request.getRequestDispatcher("select_work_report.jsp");
 			disp.forward(request, response);
 		}else{
 			//読み込み失敗
