@@ -81,7 +81,7 @@ public class ReportFind extends HttpServlet{
 
 		if(rlist != null) {
 			//工数記録検索結果の表示
-			RequestDispatcher disp = request.getRequestDispatcher("each_work_load.jsp");
+			RequestDispatcher disp = request.getRequestDispatcher("each_work_report.jsp");
 			disp.forward(request, response);
 		}else{
 			//読み込み失敗
