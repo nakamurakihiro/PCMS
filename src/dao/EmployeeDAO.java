@@ -180,9 +180,6 @@ public class EmployeeDAO extends BaseDAO {
 	 */
 	public Employee updateEmployee(Employee employee) throws SQLException{
 
-		//初期化
-		employee = null;
-
 		//オートコミットの無効
 		con.setAutoCommit(false);
 
