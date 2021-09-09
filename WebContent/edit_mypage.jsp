@@ -62,7 +62,7 @@ Employee syain = (Employee)session.getAttribute("employee");
 
 			<tr class="border_style">
 				<th>氏名</th>
-				<td><input type="text" name="last_kame" value="<%=syain.getLast_Name()%>" class="textbox">
+				<td><input type="text" name="last_name" value="<%=syain.getLast_Name()%>" class="textbox">
 					<input type="text" name="first_name" value="<%=syain.getFirst_Name()%>" class="textbox"></td>
 			</tr>
 
