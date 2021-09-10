@@ -2,6 +2,8 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.WorkDAO;
 import dto.Employee;
+import dto.Work;
 
 /**
  *@author Akihiro Nakamura
@@ -60,11 +63,15 @@ public class WorkDelete extends HttpServlet{
 			return;
 		}
 
+		//ログインした社員の部署IDを取得
+		String department_id = syain.getDepartment_Id();
+
 		//選択した作業項目を取得
 		String task = request.getParameter("task");
 
 		//作業項目削除準備
 		WorkDAO wd = new WorkDAO();
+		List<Work> wlist = new ArrayList<>();
 
 		//作業項目削除判定
 		boolean deleteJudge = false;
@@ -75,6 +82,12 @@ public class WorkDelete extends HttpServlet{
 
 			//選択した作業項目を削除
 			deleteJudge = wd.deleteTask(task);
+
+			//該当部署の作業項目取得
+			wlist = wd.selectTask(department_id);
+
+			//セッションスコープに保存
+			session.setAttribute("wlist",wlist);
 
 		}catch (SQLException e){
 			e.printStackTrace();

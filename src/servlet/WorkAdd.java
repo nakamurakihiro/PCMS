@@ -2,6 +2,8 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.WorkDAO;
 import dto.Employee;
+import dto.Work;
 
 /**
  *@author Akihiro Nakamura
@@ -69,6 +72,7 @@ public class WorkAdd extends HttpServlet{
 
 		//作業項目追加登録準備
 		WorkDAO wd = new WorkDAO();
+		List<Work> wlist = new ArrayList<>();
 
 		//追加登録判定
 		boolean addJudge = false;
@@ -79,6 +83,12 @@ public class WorkAdd extends HttpServlet{
 
 			//作業項目の追加登録
 			addJudge = wd.addTask(department_id,task);
+
+			//該当部署の作業項目取得
+			wlist = wd.selectTask(department_id);
+
+			//セッションスコープに保存
+			session.setAttribute("wlist",wlist);
 
 		}catch (SQLException e){
 			e.printStackTrace();
