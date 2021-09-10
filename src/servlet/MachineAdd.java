@@ -2,6 +2,8 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.MachineDAO;
 import dto.Employee;
+import dto.Machine;
 
 /**
  *@author Akihiro Nakamura
@@ -68,6 +71,7 @@ public class MachineAdd extends HttpServlet{
 
 		//機械名登録準備
 		MachineDAO md = new MachineDAO();
+		List<Machine> mlist = new ArrayList<>();
 
 		//追加登録判定
 		boolean addJudge = false;
@@ -78,6 +82,12 @@ public class MachineAdd extends HttpServlet{
 
 			//機械名の追加登録
 			addJudge = md.addMachine(machine_number,machine_name);
+
+			//機械一覧表示
+			mlist = md.showAllMachine();
+
+			//セッションスコープに保存
+        	session.setAttribute("mlist",mlist);
 
 		}catch (SQLException e){
 			e.printStackTrace();

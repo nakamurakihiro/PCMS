@@ -2,6 +2,8 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.MachineDAO;
 import dto.Employee;
+import dto.Machine;
 
 /**
  *@author Akihiro Nakamura
@@ -65,6 +68,7 @@ public class MachineDelete extends HttpServlet{
 
 		//機械名削除準備
 		MachineDAO md = new MachineDAO();
+		List<Machine> mlist = new ArrayList<>();
 
 		//機械名削除判定
 		boolean deleteJudge = false;
@@ -75,6 +79,12 @@ public class MachineDelete extends HttpServlet{
 
 			//選択した機械名を削除
 			deleteJudge = md.deleteMachine(machine_name);
+
+			//機械一覧表示
+			mlist = md.showAllMachine();
+
+			//セッションスコープに保存
+        	session.setAttribute("mlist",mlist);
 
 		}catch (SQLException e){
 			e.printStackTrace();
