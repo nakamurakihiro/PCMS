@@ -69,7 +69,7 @@ public class WorkDAO extends BaseDAO {
 		boolean addJudge = false;
 
 		//データベースに作業内容を追加登録するSQL文
-		String sql = "insert into db_works (department_id,task) values (?,?)";
+		String sql = "insert into works (department_id,task) values (?,?)";
 		ps = con.prepareStatement(sql);
 
 		//プレースホルダに値をセット
