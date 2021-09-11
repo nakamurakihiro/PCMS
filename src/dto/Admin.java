@@ -12,11 +12,6 @@ public class Admin implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 *管理者ID
-	 */
-	int admin_id;
-
-	/**
 	 *社員ID
 	 */
 	int employee_id;
@@ -41,22 +36,6 @@ public class Admin implements Serializable {
 	 *コンストラクタ
 	 */
 	public Admin(){}
-
-	/**
-	 *@return admin_id - 管理者ID
-	 *管理者IDを返す
-	 */
-	public int getAdmin_Id(){
-		return admin_id;
-	}
-
-	/**
-	 *@param admin_id - 管理者ID
-	 *管理者IDのセット
-	 */
-	public void setAdmin_Id(int admin_id){
-		this.admin_id = admin_id;
-	}
 
 	/**
 	 *@return employee_id - 社員ID
