@@ -62,7 +62,7 @@ public class DepartmentDAO extends BaseDAO {
 
 	/**
 	 *@param machine_name 機械名
-	 *@return List<Department> 部署一覧
+	 *@return dlist 部署一覧
 	 *@throws SQLException データベース接続処理でエラー
 	 *選択した機械名から部署情報を取得するメソッド
 	 */
@@ -136,7 +136,7 @@ public class DepartmentDAO extends BaseDAO {
 	}
 
 	/**
-	 *@return List<Department> 部署一覧
+	 *@return dlist 部署一覧
 	 *@throws SQLException データベース接続処理でエラー
 	 *部署を一覧表示するメソッド
 	 */

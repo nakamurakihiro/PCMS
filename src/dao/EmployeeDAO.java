@@ -307,7 +307,7 @@ public class EmployeeDAO extends BaseDAO {
 	}
 
 	/**
-	 *@return List<Employee> 社員一覧
+	 *@return elist 社員一覧
 	 *@throws SQLException データベース接続処理でエラー
 	 *全社員一覧表示するメソッド
 	 */

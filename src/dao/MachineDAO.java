@@ -91,7 +91,7 @@ public class MachineDAO extends BaseDAO {
 	}
 
 	/**
-	 *@param machine_name
+	 *@param machine_name 機械名
 	 *@return 選択した機械を削除出来たらtrue,出来なかったらfalse
 	 *@throws SQLException データベース接続処理でエラー
 	 *選択した機械を削除するメソッド
@@ -124,7 +124,7 @@ public class MachineDAO extends BaseDAO {
 	}
 
 	/**
-	 *@return List<Machine> 機械一覧
+	 *@return mlist 機械一覧
 	 *@throws SQLException データベース接続処理でエラー
 	 *機械一覧表示メソッド
 	 */

@@ -19,7 +19,7 @@ public class WorkDAO extends BaseDAO {
 
 	/**
 	 *@param department_id 部署ID
-	 *@return List<Work> 作業項目一覧
+	 *@return wlist 作業項目一覧
 	 *@throws SQLException データベース接続処理でエラー
 	 *部署毎の作業項目を取得するメソッド
 	 */

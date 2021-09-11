@@ -15,6 +15,7 @@ public class ConnectionManager {
 	 *Javaを使用してHerokuのClearDBに接続
 	 */
 	private static final String dsn = java.lang.System.getenv("CLEARDB_DATABASE_URL");
+
 	/**
 	 *特定のデータベースとの接続
 	 */
@@ -59,7 +60,7 @@ public class ConnectionManager {
 	}
 
 	/**
-	 *@return conを返す
+	 *@param con データベース接続
 	 *@throws SQLException データベース接続処理でエラー
 	 *データベース切断メソッド
 	 */

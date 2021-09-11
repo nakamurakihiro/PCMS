@@ -44,7 +44,7 @@ public class Department implements Serializable {
 	}
 
 	/**
-	 *@param department_Id - 部署ID
+	 *@param department_id - 部署ID
 	 *	部署IDのセット
 	 */
 	public void setDepartment_Id(String department_id){

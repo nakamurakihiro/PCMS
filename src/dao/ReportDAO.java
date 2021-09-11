@@ -19,7 +19,7 @@ public class ReportDAO extends BaseDAO {
 
 	/**
 	 *@param employee_id 社員ID
-	 *@return List<Report> 工数記録一覧
+	 *@return rlist 工数記録一覧
 	 *@throws SQLException データベース接続処理でエラー
 	 *ログインした社員の工数記録を探すメソッド
 	 */
@@ -269,7 +269,7 @@ public class ReportDAO extends BaseDAO {
 	/**
 	 *@param department_id 部署ID
 	 *@param machine_name 機械名
-	 *@return List<Report> 工数記録一覧
+	 *@return rlist 工数記録一覧
 	 *@throws SQLException データベース接続処理でエラー
 	 *所属部署と機械名毎に工数記録を取得するメソッド
 	 */
@@ -314,7 +314,7 @@ public class ReportDAO extends BaseDAO {
 
 	/**
 	 *@param employee_id 社員ID
-	 *@return  List<Report> 工数記録一覧
+	 *@return rlist 工数記録一覧
 	 *@throws SQLException データベース接続処理でエラー
 	 *選択した社員の工数記録を全件表示するメソッド
 	 */
@@ -364,7 +364,7 @@ public class ReportDAO extends BaseDAO {
 
 	/**
 	 *@param machine_name 機械名
-	 *@return List<Report> 工数記録一覧
+	 *@return rlist 工数記録一覧
 	 *@throws SQLException データベース接続処理でエラー
 	 *選択した機械名から工数記録を探すメソッド
 	 */
@@ -406,7 +406,7 @@ public class ReportDAO extends BaseDAO {
 	}
 
 	/**
-	 *@return List<Report> 工数記録一覧
+	 *@return rlist 工数記録一覧
 	 *@throws SQLException データベース接続処理でエラー
 	 *全社員の工数記録を表示するメソッド
 	 */
