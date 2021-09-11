@@ -27,6 +27,7 @@ List<Machine> mlist = (List<Machine>)session.getAttribute("mlist");
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>工数記録画面</title>
 <link rel="stylesheet" type="text/css" href="CSS/style.css">
+<script type="text/javascript" src="JavaScript/function.js"></script>
 </head>
 <body>
 <!-- ヘッダー -->
@@ -109,7 +110,7 @@ List<Machine> mlist = (List<Machine>)session.getAttribute("mlist");
 		</table>
 
 		<!-- 保存ボタン -->
-		<button type="submit" class="button blue button_fixed">保存</button>
+		<button type="submit" class="button blue button_fixed" onClick="return Save_Check()">保存</button>
 	</form>
 </div>
 
