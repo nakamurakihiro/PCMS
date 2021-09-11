@@ -47,12 +47,12 @@ public class ReportDelete extends HttpServlet{
 		//セッションオブジェクトの生成
 		HttpSession session = request.getSession();
 
-		//ログイン中の管理者IDを取得
+		//ログイン中の管理者情報を取得
 		Admin manager = (Admin)session.getAttribute("admin");
-		int admin_id = manager.getAdmin_Id();
+		String last_name = manager.getLast_Name();
 
 		//管理者ゲストユーザーの場合、工数記録削除不可
-		if(admin_id == 1){
+		if(last_name.equals ("ゲスト")){
 			RequestDispatcher disp = request.getRequestDispatcher("not_delete_report.jsp");
 			disp.forward(request, response);
 			return;
