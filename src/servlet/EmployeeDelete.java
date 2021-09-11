@@ -49,10 +49,10 @@ public class EmployeeDelete extends HttpServlet{
 
 		//ログイン中の管理者IDを取得
 		Admin manager = (Admin)session.getAttribute("admin");
-		int admin_id = manager.getAdmin_Id();
+		String last_name = manager.getLast_Name();
 
 		//管理者ゲストユーザーの場合、社員削除不可
-		if(admin_id == 1){
+		if(last_name.equals ("ゲスト")){
 			RequestDispatcher disp = request.getRequestDispatcher("not_delete_employee.jsp");
 			disp.forward(request, response);
 			return;
