@@ -47,7 +47,7 @@ public class EmployeeDelete extends HttpServlet{
 		//セッションオブジェクトの生成
 		HttpSession session = request.getSession();
 
-		//ログイン中の管理者IDを取得
+		//ログイン中の管理者情報を取得
 		Admin manager = (Admin)session.getAttribute("admin");
 		String last_name = manager.getLast_Name();
 
