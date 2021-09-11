@@ -121,18 +121,18 @@ public class AdminDAO extends BaseDAO {
 	}
 
 	/**
-	 *@param admin_id 管理者ID
+	 *@param employee_id 社員ID
 	 *@return 管理者権限を削除出来たらtrue,出来なかったらfalse
 	 *@throws SQLException データベース接続処理でエラー
 	 *管理者権限を削除するメソッド
 	 */
-	public boolean deleteAdmin(int admin_id) throws SQLException{
+	public boolean deleteAdmin(int employee_id) throws SQLException{
 
 		//オートコミットの無効
 		con.setAutoCommit(false);
 
 		//データベースから指定した管理者を削除するSQL文
-		String sql = "delete from admins where admin_id = ?";
+		String sql = "delete from admins where employee_id = ?";
 		ps = con.prepareStatement(sql);
 
 		//削除判定
@@ -140,7 +140,7 @@ public class AdminDAO extends BaseDAO {
 
 		//プレースホルダに値をセット
 		//管理者ID
-		ps.setInt(1,admin_id);
+		ps.setInt(1,employee_id);
 
 		//SQL文の実行
 		int da = ps.executeUpdate();

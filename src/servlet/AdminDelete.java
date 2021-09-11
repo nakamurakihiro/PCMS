@@ -50,10 +50,10 @@ public class AdminDelete extends HttpServlet{
 
 		//ログイン中の管理者IDを取得
 		Admin manager = (Admin)session.getAttribute("admin");
-		int admin_id = manager.getAdmin_Id();
+		int employee_id = manager.getEmployee_Id();
 
 		//管理者ゲストユーザーの場合、削除不可
-		if(admin_id == 1){
+		if(employee_id == 0){
 			RequestDispatcher disp = request.getRequestDispatcher("not_delete_guest_admin.jsp");
 			disp.forward(request, response);
 			return;
@@ -70,7 +70,7 @@ public class AdminDelete extends HttpServlet{
 			ad.dbConnect();
 
 			//管理者権限削除
-			deleteJudge = ad.deleteAdmin(admin_id);
+			deleteJudge = ad.deleteAdmin(employee_id);
 
 		}catch (SQLException e){
 			e.printStackTrace();
