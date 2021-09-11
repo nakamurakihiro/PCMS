@@ -11,7 +11,7 @@ import dto.Admin;
 public class AdminDAO extends BaseDAO {
 
 	/**
-	 *@param employee_is 社員ID
+	 *@param employee_id 社員ID
 	 *@param admin_password 管理者パスワード
 	 *@return 管理者情報を返す
 	 *@throws SQLException データベース接続処理でエラー
@@ -23,7 +23,7 @@ public class AdminDAO extends BaseDAO {
 		Admin admin = null;
 
 		//データベースから管理者情報を取得するSQL文
-		String sql ="select * from admins where employeee_id = ? and admin_password = ?";
+		String sql ="select * from admins where employee_id = ? and admin_password = ?";
 		ps = con.prepareStatement(sql);
 
 		//プレースホルダに値をセット
