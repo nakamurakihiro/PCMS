@@ -80,7 +80,7 @@ Admin manager=(Admin)session.getAttribute("admin");
 					<!-- 社員削除ボタン -->
 					<td>
 						<form action="./EmployeeDelete?name=<%=employee.getEmployee_Id()%>&employee_id=<%=employee.getEmployee_Id()%>" method="post">
-							<button type="submit" class="small_button red" onClick="return Check()">削除</button>
+							<button type="submit" class="small_button red" onClick="return Delete_Check()">削除</button>
 						</form>
 					</td>
 				</tr>

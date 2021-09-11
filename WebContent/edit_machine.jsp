@@ -86,7 +86,7 @@ List<Machine> mlist = (List<Machine>)session.getAttribute("mlist");
 		</table>
 
 		<!-- 削除ボタン -->
-		<button type="submit" class="button red" onClick="return Check()">削除する</button>
+		<button type="submit" class="button red" onClick="return Delete_Check()">削除する</button>
 	</form>
 </div>
 

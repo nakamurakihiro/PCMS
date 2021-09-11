@@ -86,7 +86,7 @@ List<Work> wlist = (List<Work>)session.getAttribute("wlist");
 		</table>
 
 		<!-- 削除ボタン -->
-		<button type="submit" class="button red" onClick="return Check()">削除する</button>
+		<button type="submit" class="button red" onClick="return Delete_Check()">削除する</button>
 	</form>
 </div>
 

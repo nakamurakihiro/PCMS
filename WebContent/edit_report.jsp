@@ -110,7 +110,7 @@ List<Machine> mlist = (List<Machine>)session.getAttribute("mlist");
 
 	<!-- 工数記録削除ボタン -->
 	<form action="./ReportDelete?name=<%=nippo.getEmployee_Id()%>&name=<%=nippo.getDay()%>&employee_id=<%=nippo.getEmployee_Id()%>&day=<%=nippo.getDay()%>" method="post">
-		<button type="submit" class="button red" onClick="return Check()">削除する</button>
+		<button type="submit" class="button red" onClick="return Delete_Check()">削除する</button>
 	</form>
 </div>
 
