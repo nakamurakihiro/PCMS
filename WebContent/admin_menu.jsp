@@ -4,7 +4,7 @@
 
 <%
 //セッションスコープに保存された管理者情報を取得
-Admin manager=(Admin)session.getAttribute("admin");
+Admin manager = (Admin)session.getAttribute("admin");
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -31,10 +31,10 @@ Admin manager=(Admin)session.getAttribute("admin");
 	</nav>
 </header>
 
-<div class="admin_delete_button">
-	<!-- 管理者権限の削除 -->
+<div class="admin_button">
+	<!-- 管理者権限削除 -->
 	<form action="./AdminDelete" method="post">
-		<button type="submit" class="small_button red" onClick="return Check()">管理者権限削除</button>
+		<button type="submit" class="small_button red" onClick="return Delete_Check()">管理者権限削除</button>
 	</form>
 </div>
 
