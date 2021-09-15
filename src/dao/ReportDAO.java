@@ -211,6 +211,38 @@ public class ReportDAO extends BaseDAO {
 
 	/**
 	 *@param employee_id 社員ID
+	 *@return 選択した社員の工数記録を削除出来たらtrue,削除出来なかったらfalse
+	 *@throws SQLException データベース接続処理でエラー
+	 *選択した社員の工数記録を削除するメソッド
+	 */
+	public boolean deleteEmployeeReport(int employee_id) throws SQLException{
+
+		//オートコミットの無効
+		con.setAutoCommit(false);
+
+		//データベースから選択した工数記録を削除するSQL文
+		String sql = "delete from reports where employee_id = ?";
+		ps = con.prepareStatement(sql);
+
+		//削除判定
+		boolean deleteJudge = false;
+
+		//プレースホルダに値をセット
+		//社員ID
+		ps.setInt(1,employee_id);
+
+		//SQL文の実行
+		int der = ps.executeUpdate();
+
+		//削除したらコミットする
+		if(der > 0){
+			deleteJudge = true;
+			con.commit();
+		}
+		return deleteJudge;
+	}
+	/**
+	 *@param employee_id 社員ID
 	 *@param day 日付
 	 *@return 選択した工数記録を返す
 	 *@throws SQLException データベース接続処理でエラー
