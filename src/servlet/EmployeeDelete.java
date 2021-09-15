@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.EmployeeDAO;
-import dto.Admin;
 
 /**
  *@author Akihiro Nakamura
@@ -46,17 +45,6 @@ public class EmployeeDelete extends HttpServlet{
 
 		//セッションオブジェクトの生成
 		HttpSession session = request.getSession();
-
-		//ログイン中の管理者情報を取得
-		Admin manager = (Admin)session.getAttribute("admin");
-		String last_name = manager.getLast_Name();
-
-		//管理者ゲストユーザーの場合、社員削除不可
-		if(last_name.equals ("ゲスト")){
-			RequestDispatcher disp = request.getRequestDispatcher("not_delete_employee.jsp");
-			disp.forward(request, response);
-			return;
-		}
 
 		//社員一覧画面から選択した社員IDを取得
 		int employee_id = Integer.parseInt(request.getParameter("employee_id"));
