@@ -150,7 +150,7 @@ public class AdminPasswordChange extends HttpServlet{
 
 		if(!regixJudge) {
 			//正規表現チェックでエラー
-			RequestDispatcher disp = request.getRequestDispatcher("regix_error.jsp");
+			RequestDispatcher disp = request.getRequestDispatcher("admin_password_regix_error.jsp");
 			disp.forward(request, response);
 			return;
 		}
