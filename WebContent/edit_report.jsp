@@ -114,8 +114,8 @@ List<Machine> mlist = (List<Machine>)session.getAttribute("mlist");
 	</form>
 </div>
 
-<!-- 個人工数記録画面へ戻るボタン -->
-<a href="select_work_load.jsp"><button type="button" class="back_button">戻る</button></a>
+<!-- 社員工数記録一覧画面へ戻るボタン -->
+<a href="select_work_report.jsp"><button type="button" class="back_button">戻る</button></a>
 
 <!-- フッター -->
 <footer>
