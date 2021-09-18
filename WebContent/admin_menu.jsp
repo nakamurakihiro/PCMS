@@ -34,7 +34,7 @@ Admin manager = (Admin)session.getAttribute("admin");
 <div class="admin_button">
 	<!-- 管理者権限削除 -->
 	<form action="./AdminDelete" method="post">
-		<button type="submit" class="small_button red" onClick="return Delete_Check()">管理者権限削除</button>
+		<button type="submit" class="small_button red" onClick="return Admin_Delete_Check()">管理者権限削除</button>
 	</form>
 </div>
 
