@@ -18,3 +18,13 @@ function Save_Check(){
 			return false;
 		}
 	}
+
+/*管理者権限削除確認*/
+function Admin_Delete_Check(){
+	var admin_deleted = confirm("管理者権限が失われます。n削除してもよろしいですか？");
+		if (admin_deleted == true) {
+			return true;
+		}else{
+			return false;
+		}
+	}
