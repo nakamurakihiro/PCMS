@@ -28,3 +28,13 @@ function Admin_Delete_Check(){
 			return false;
 		}
 	}
+
+/*ログアウト確認*/
+function Logout_Check(){
+	var logouted = confirm("ログアウトしてもよろしいですか？");
+		if (logouted == true) {
+			return true;
+		}else{
+			return false;
+		}
+	}
