@@ -6,6 +6,7 @@
 //セッションスコープに保存された社員情報を取得
 Employee syain = (Employee)session.getAttribute("employee");
 %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -27,7 +28,7 @@ Employee syain = (Employee)session.getAttribute("employee");
 			<!-- ヘッダーメニューの表示 -->
 			<li><a href="mypage.jsp">マイページ</a></li>
 			<li><a href="employee_password_change.jsp">パスワード変更</a></li>
-			<li><a href="./Logout">ログアウト</a></li>
+			<li><a href="./Logout" onClick="return Logout_Check()">ログアウト</a></li>
 		</ul>
 	</nav>
 </header>

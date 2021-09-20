@@ -28,7 +28,7 @@ Employee syain = (Employee)session.getAttribute("employee");
 			<!-- ヘッダーメニューの表示 -->
 			<li><a href="mypage.jsp">マイページ</a></li>
 			<li><a href="employee_password_change.jsp">パスワード変更</a></li>
-			<li><a href="./Logout">ログアウト</a></li>
+			<li><a href="./Logout" onClick="return Logout_Check()">ログアウト</a></li>
 		</ul>
 	</nav>
 </header>
