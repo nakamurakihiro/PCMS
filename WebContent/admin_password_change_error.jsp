@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="dto.Admin"%>
+
+<%
+//セッションスコープに保存された管理者情報を取得
+Admin manager = (Admin)session.getAttribute("admin");
+%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,6 +18,16 @@
 <!-- ヘッダー -->
 <header>
 	<h1>PCMS</h1>
+
+	<nav class="header_menu">
+		<ul>
+			<!-- ログイン中の管理者氏名の表示 -->
+			<li>管理者:<%=manager.getLast_Name()%><%=manager.getFirst_Name()%></li>
+			<!-- ヘッダーメニューの表示 -->
+			<li><a href="admin_password_change.jsp">管理者パスワード変更</a></li>
+			<li><a href="./Logout" onClick="return Logout_Check()">ログアウト</a></li>
+		</ul>
+	</nav>
 </header>
 
 <div class="center_screen">

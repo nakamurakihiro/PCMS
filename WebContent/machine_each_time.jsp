@@ -27,6 +27,7 @@ Machine kikai = (Machine)session.getAttribute("machine");
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>各機械工数合計時間</title>
 <link rel="stylesheet" type="text/css" href="CSS/style.css">
+<script type="text/javascript" src="JavaScript/function.js"></script>
 </head>
 <body>
 <!-- ヘッダー -->
@@ -39,7 +40,7 @@ Machine kikai = (Machine)session.getAttribute("machine");
 			<li>管理者:<%=manager.getLast_Name()%><%=manager.getFirst_Name()%></li>
 			<!-- ヘッダーメニューの表示 -->
 			<li><a href="admin_password_change.jsp">管理者パスワード変更</a></li>
-			<li><a href="./Logout">ログアウト</a></li>
+			<li><a href="./Logout" onClick="return Logout_Check()">ログアウト</a></li>
 		</ul>
 	</nav>
 </header>

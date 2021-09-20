@@ -25,14 +25,13 @@ Admin manager=(Admin)session.getAttribute("admin");
 			<li>管理者:<%=manager.getLast_Name()%><%=manager.getFirst_Name()%></li>
 			<!-- ヘッダーメニューの表示 -->
 			<li><a href="admin_password_change.jsp">管理者パスワード変更</a></li>
-			<li><a href="./Logout">ログアウト</a></li>
-		</ul>
+			<li><a href="./Logout" onClick="return Logout_Check()">ログアウト</a></li>
 	</nav>
 </header>
 
 <div class="center_screen">
 	<p>新しい管理者パスワードが入力されていません。</p>
-	<p>新しい管理者パスワードを入力して下さい。</p>
+	<p>再度、新しい管理者パスワードを入力して下さい。</p>
 
 	<!-- 管理者パスワード変更画面へ -->
 	<a href="admin_password_change.jsp"><button type="button" class="button blue">管理者パスワード変更画面へ</button></a>

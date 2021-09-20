@@ -13,6 +13,7 @@ Admin manager = (Admin)session.getAttribute("admin");
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>社員削除</title>
 <link rel="stylesheet" type="text/css" href="CSS/style.css">
+<script type="text/javascript" src="JavaScript/function.js"></script>
 </head>
 <body>
 <!-- ヘッダー -->
@@ -24,7 +25,7 @@ Admin manager = (Admin)session.getAttribute("admin");
 			<!-- ログイン中の管理者氏名の表示 -->
 			<li>管理者:<%=manager.getLast_Name()%><%=manager.getFirst_Name()%></li>
 			<li><a href="admin_password_change.jsp">管理者パスワード変更</a></li>
-			<li><a href="./Logout">ログアウト</a></li>
+			<li><a href="./Logout" onClick="return Logout_Check()">ログアウト</a></li>
 		</ul>
 	</nav>
 </header>
