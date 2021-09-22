@@ -38,3 +38,13 @@ function Logout_Check(){
 			return false;
 		}
 	}
+
+/*パスワード変更確認*/
+function Password_Change_Check(){
+	var  password_changed = confirm("新しいパスワードに変更します。n変更してもよろしいですか？");
+		if (password_changed == true) {
+			return true;
+		}else{
+			return false;
+		}
+	}
