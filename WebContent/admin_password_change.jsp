@@ -70,7 +70,7 @@ Admin manager=(Admin)session.getAttribute("admin");
 			</table>
 
 		<!-- 管理者パスワード変更ボタン -->
-		<button type="submit" class="button blue button_fixed">管理者パスワード変更</button>
+		<button type="submit" class="button blue button_fixed" onClick="return Password_Change_Check()">管理者パスワード変更</button>
 	</form>
 </div>
 

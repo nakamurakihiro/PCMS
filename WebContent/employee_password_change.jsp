@@ -73,7 +73,7 @@ Employee syain = (Employee)session.getAttribute("employee");
 			</table>
 
 		<!-- パスワード変更ボタン -->
-		<button type="submit" class="button blue button_fixed">パスワード変更</button>
+		<button type="submit" class="button blue button_fixed" onClick="return Password_Change_Check()">パスワード変更</button>
 	</form>
 </div>
 
