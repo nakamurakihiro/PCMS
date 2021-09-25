@@ -43,7 +43,7 @@ Employee syain = (Employee)session.getAttribute("employee");
 
 			<tr class="border_style">
 				<th>氏名<span>(必須)</span></th>
-				<td><input type="text" name="last_name" class="textbox" autocomplete="off" placeholder="姓" required>	<!-- placeholder属性：フォームの入力欄に入力ヒントを表示する -->
+				<td><input type="text" name="last_name" class="textbox" autocomplete="off" placeholder="姓" required>
 					<input type="text" name="first_name" class="textbox" autocomplete="off" placeholder="名" required></td>
 			</tr>
 
