@@ -17,9 +17,13 @@ public class Admin implements Serializable {
 	int employee_id;
 
 	/**
+	 *メールアドレス
+	 */
+	private String email_address;
+
+	/**
 	 *姓
 	 */
-
 	private String last_name;
 
 	/**
@@ -51,6 +55,22 @@ public class Admin implements Serializable {
 	 */
 	public void setEmployee_Id(int employee_id){
 		this.employee_id = employee_id;
+	}
+
+	/**
+	 *@return email_address - メールアドレス
+	 *メールアドレスを返す
+	 */
+	public String getEmail_Address(){
+		return email_address;
+	}
+
+	/**
+	 *@param email_address - メールアドレス
+	 *メールアドレスのセット
+	 */
+	public void seｔEmail_Address(String email_address){
+		this.email_address = email_address;
 	}
 
 	/**
