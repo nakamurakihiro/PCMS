@@ -14,7 +14,7 @@ public class Admin implements Serializable {
 	/**
 	 *社員ID
 	 */
-	int employee_id;
+	private int employee_id;
 
 	/**
 	 *メールアドレス
