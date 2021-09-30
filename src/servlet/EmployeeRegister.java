@@ -53,6 +53,8 @@ public class EmployeeRegister extends HttpServlet{
 		int employee_id = syain.getEmployee_Id();
 
 		//新規社員登録画面から社員情報を取得
+		//メールアドレス
+		String email_address = request.getParameter("email_address");
 		//姓
 		String last_name = request.getParameter("last_name");
 		//名
@@ -79,7 +81,7 @@ public class EmployeeRegister extends HttpServlet{
 			ed.dbConnect();
 
 			//新規社員情報をデータベースに登録
-			registJudge = ed.registEmployee(employee_id,last_name,first_name,last_kana,first_kana,department_name,blood,employee_password);
+			registJudge = ed.registEmployee(employee_id,email_address,last_name,first_name,last_kana,first_kana,department_name,blood,employee_password);
 
 		}catch (SQLException e){
 			e.printStackTrace();

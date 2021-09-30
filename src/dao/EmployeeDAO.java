@@ -113,7 +113,7 @@ public class EmployeeDAO extends BaseDAO {
 	 *@throws SQLException  データベース接続処理でエラー
 	 *新規社員登録メソッド
 	 */
-	public boolean registEmployee(int employee_id,String last_name,String first_name,String last_kana,String first_kana,String department_name,String blood,String employee_password) throws SQLException{
+	public boolean registEmployee(int employee_id,String email_address,String last_name,String first_name,String last_kana,String first_kana,String department_name,String blood,String employee_password) throws SQLException{
 
 		//オートコミットの無効
 		con.setAutoCommit(false);
@@ -140,28 +140,30 @@ public class EmployeeDAO extends BaseDAO {
 		boolean registJudge = false;
 
 		//データベースに新規社員登録するSQL文
-		String sql2 = "insert into employees (employee_id,last_name,first_name,last_kana,first_kana,department_name,department_id,blood,employee_password) values (?,?,?,?,?,?,?,?,?)";
+		String sql2 = "insert into employees (employee_id,email_address,last_name,first_name,last_kana,first_kana,department_name,department_id,blood,employee_password) values (?,?,?,?,?,?,?,?,?)";
 		ps = con.prepareStatement(sql2);
 
 		//プレースホルダに値をセット
 		//社員ID
 		ps.setInt(1,employee_id);
+		//メールアドレス
+		ps.setString(2,email_address);
 		//姓
-		ps.setString(2,last_name);
+		ps.setString(3,last_name);
 		//名
-		ps.setString(3,first_name);
+		ps.setString(4,first_name);
 		//姓フリガナ
-		ps.setString(4,last_kana);
+		ps.setString(5,last_kana);
 		//名フリガナ
-		ps.setString(5,first_kana);
+		ps.setString(6,first_kana);
 		//部署名
-		ps.setString(6,department_name);
+		ps.setString(7,department_name);
 		//部署ID
-		ps.setString(7,employee.getDepartment_Id());
+		ps.setString(8,employee.getDepartment_Id());
 		//血液型
-		ps.setString(8,blood);
+		ps.setString(9,blood);
 		//パスワード
-		ps.setString(9,employee_password);
+		ps.setString(10,employee_password);
 
 		//SQL文の実行
 		int re = ps.executeUpdate();
