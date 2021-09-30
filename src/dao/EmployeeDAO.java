@@ -18,23 +18,23 @@ public class EmployeeDAO extends BaseDAO {
 	private List<Employee> elist = new ArrayList<>();
 
 	/**
-	 *@param employee_id 社員ID
+	 *@param email_address メールアドレス
 	 *@param employee_password 社員パスワード
 	 *@return ログインした社員情報を返す
 	 *@throws SQLException データベース接続処理でエラー
 	 *社員ログインメソッド
 	 */
-	public Employee loginEmployee(int employee_id,String employee_password) throws SQLException{
+	public Employee loginEmployee(String email_address,String employee_password) throws SQLException{
 
 		//初期化
 		Employee employee = null;
 
 		//データベースからログインした社員情報を取得するSQL文
-		String sql ="select * from employees where employee_id = ? and employee_password = ?";
+		String sql ="select * from employees where email_address = ? and employee_password = ?";
 		ps = con.prepareStatement(sql);
 
 		//プレースホルダに値をセット
-		ps.setInt(1,employee_id);
+		ps.setString(1,email_address);
 		ps.setString(2,employee_password);
 
 		//SQL文の実行
@@ -47,6 +47,8 @@ public class EmployeeDAO extends BaseDAO {
 
 			//社員ID
 			employee.setEmployee_Id(rs.getInt("employee_id"));
+			//メールアドレス
+			employee.setEmail_Address(rs.getString("email_address"));
 			//姓
 			employee.setLast_Name(rs.getString("last_name"));
 			//名
