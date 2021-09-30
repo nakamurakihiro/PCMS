@@ -49,8 +49,8 @@ public class AdminLogin extends HttpServlet{
 		HttpSession session = request.getSession();
 
 		//管理者ログイン画面から入力されたログイン情報を取得
-		//社員ID
-		int employee_id = Integer.parseInt(request.getParameter("employee_id"));
+		//メールアドレス
+		String email_address = request.getParameter("email_address");
 		//管理者パスワード
 		String admin_password = request.getParameter("admin_password");
 
@@ -63,7 +63,7 @@ public class AdminLogin extends HttpServlet{
 			ad.dbConnect();
 
 			//管理者検索
-			admin = ad.loginAdmin(employee_id,admin_password);
+			admin = ad.loginAdmin(email_address,admin_password);
 
 			//セッションスコープに保存
 			session.setAttribute("admin",admin);

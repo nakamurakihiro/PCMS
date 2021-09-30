@@ -11,23 +11,23 @@ import dto.Admin;
 public class AdminDAO extends BaseDAO {
 
 	/**
-	 *@param employee_id 社員ID
+	 *@param email_address メールアドレス
 	 *@param admin_password 管理者パスワード
 	 *@return 管理者情報を返す
 	 *@throws SQLException データベース接続処理でエラー
 	 *管理者ログインメソッド
 	 */
-	public Admin loginAdmin(int employee_id,String admin_password) throws SQLException{
+	public Admin loginAdmin(String email_address,String admin_password) throws SQLException{
 
 		//初期化
 		Admin admin = null;
 
 		//データベースから管理者情報を取得するSQL文
-		String sql ="select * from admins where employee_id = ? and admin_password = ?";
+		String sql ="select * from admins where email_address = ? and admin_password = ?";
 		ps = con.prepareStatement(sql);
 
 		//プレースホルダに値をセット
-		ps.setInt(1,employee_id);
+		ps.setString(1,email_address);
 		ps.setString(2,admin_password);
 
 		//SQL文の実行
@@ -40,6 +40,8 @@ public class AdminDAO extends BaseDAO {
 
 			//社員ID
 			admin.setEmployee_Id(rs.getInt("employee_id"));
+			//メールアドレス
+			admin.setEmail_Address(rs.getString("email_address"));
 			//姓
 			admin.setLast_Name(rs.getString("last_name"));
 			//名
