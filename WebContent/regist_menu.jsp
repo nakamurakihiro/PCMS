@@ -31,14 +31,18 @@ Employee syain = (Employee)session.getAttribute("employee");
 <!-- 画面名称 -->
 <h5>新規社員登録</h5>
 
-<!-- 登録内容の入力 -->
+<!-- 登録情報の入力 -->
 <div class="center_screen-2">
-	<!-- 登録情報の入力 -->
 	<form action="./EmployeeRegister" method="post">
 		<table class="border_table">
 			<tr class="border_style">
 				<th>社員ID</th>
 				<td><%=syain.getEmployee_Id()%></td>
+			</tr>
+
+			<tr class="border_style">
+				<th>メールアドレス<span>(必須)</span></th>
+				<td><input type="text" name="email_address" class="textbox" autocomplete="off" placeholder="メールアドレス" required>@pcms.co.jp</td>
 			</tr>
 
 			<tr class="border_style">
