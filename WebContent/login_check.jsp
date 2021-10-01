@@ -23,8 +23,8 @@
 		<form action="./EmployeeLogin"  method="post">
 			<table class="border_table">
 				<tr class="border_style">
-					<td>社員ID</td>
-					<td><input type="text" name="employee_id" class="textbox" autocomplete="off" required></td>
+					<th>メールアドレス</th>
+					<td><input type="text" name="email_address" class="textbox" autocomplete="off" required>@pcms.co.jp</td>
 				</tr>
 
 				<tr class="border_style">
