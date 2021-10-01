@@ -23,8 +23,8 @@
 	<form action="./AdminLogin" method="post">
 		<table class="center_table">
 			<tr>
-				<th>社員ID</th>
-				<td><input type="text" name="employee_id"  class="textbox" autocomplete="off" required></td>
+				<th>メールアドレス</th>
+				<td><input type="text" name="email_address" class="textbox" autocomplete="off" required>@pcms.co.jp</td>
 			</tr>
 
 			<tr>
@@ -34,7 +34,7 @@
 		</table>
 
 		<!-- ログインボタン -->
-		<button type="submit" class="button blue" >ログイン</button>
+		<button type="submit" class="button blue">ログイン</button>
 	</form>
 
 	<!-- 管理者ゲストログイン -->
