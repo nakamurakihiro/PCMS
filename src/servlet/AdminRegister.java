@@ -55,6 +55,8 @@ public class AdminRegister extends HttpServlet{
 		//管理者登録画面から登録情報の取得
 		//社員ID
 		int employee_id = Integer.parseInt(request.getParameter("employee_id"));
+		//メールアドレス
+		String email_address = request.getParameter("email_address");
 		//姓
 		String last_name = request.getParameter("last_name");
 		//名
@@ -80,7 +82,7 @@ public class AdminRegister extends HttpServlet{
 			ad.dbConnect();
 
 			//管理者としてデータベースに新規登録
-			registJudge = ad.registAdmin(employee_id,last_name, first_name,admin_password);
+			registJudge = ad.registAdmin(employee_id,email_address,last_name, first_name,admin_password);
 
 		}catch (SQLException e){
 			e.printStackTrace();

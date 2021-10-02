@@ -89,7 +89,7 @@ public class AdminDAO extends BaseDAO {
 	 *@throws SQLException データベース接続処理でエラー
 	 *管理者権限を付与するメソッド
 	 */
-	public boolean registAdmin(int employee_id,String last_name,String first_name,String admin_password) throws SQLException{
+	public boolean registAdmin(int employee_id,String email_address,String last_name,String first_name,String admin_password) throws SQLException{
 
 		//オートコミットの無効
 		con.setAutoCommit(false);
@@ -98,18 +98,20 @@ public class AdminDAO extends BaseDAO {
 		boolean registJudge = false;
 
 		//データベースに管理者権限を登録するSQL文
-		String sql = "insert into admins (employee_id,last_name,first_name,admin_password) values (?,?,?,?)";
+		String sql = "insert into admins (employee_id,email_address,last_name,first_name,admin_password) values (?,?,?,?,?)";
 		ps = con.prepareStatement(sql);
 
 		//プレースホルダに値をセット
 		//社員ID
 		ps.setInt(1,employee_id);
+		//メールアドレス
+		ps.setString(2,email_address);
 		//姓
-		ps.setString(2,last_name);
+		ps.setString(3,last_name);
 		//名
-		ps.setString(3,first_name);
+		ps.setString(4,first_name);
 		//管理者パスワード
-		ps.setString(4,admin_password);
+		ps.setString(5,admin_password);
 
 		//SQL文の実行
 		int ra = ps.executeUpdate();
