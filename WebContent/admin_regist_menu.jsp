@@ -34,6 +34,11 @@ Employee syain=(Employee)session.getAttribute("employee");
 				</tr>
 
 				<tr class="border_style">
+					<th>メールアドレス</th>
+					<td><input type="hidden" name="email_address" value="<%=syain.getEmail_Address()%>"><%=syain.getEmail_Address()%>@pcms.co.jp</td>
+				</tr>
+
+				<tr class="border_style">
 					<th>氏名</th>
 					<td><input type="hidden" name="last_name" value="<%=syain.getLast_Name()%>">
 						<input type="hidden" name="first_name" value="<%=syain.getFirst_Name()%>">
