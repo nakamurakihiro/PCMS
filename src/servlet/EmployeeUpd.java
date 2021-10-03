@@ -50,6 +50,8 @@ public class EmployeeUpd extends HttpServlet{
 		//マイページから編集した社員情報を取得
 		//社員ID
 		int employee_id = Integer.parseInt(request.getParameter("employee_id"));
+		//メールアドレス
+		String email_address = request.getParameter("email_address");
 		//姓
 		String last_name = request.getParameter("last_name");
 		//名
@@ -88,6 +90,8 @@ public class EmployeeUpd extends HttpServlet{
 
 		//社員IDをセット
 		employee.setEmployee_Id(employee_id);
+		//メールアドレスをセット
+		employee.setEmail_Address(email_address);
 		//姓をセット
 		employee.setLast_Name(last_name);
 		//名をセット
