@@ -188,7 +188,7 @@ public class EmployeeDAO extends BaseDAO {
 		con.setAutoCommit(false);
 
 		//データベースの社員情報を更新するSQL文
-		String sql = "update employees set last_name = ?,first_name = ?,last_kana = ?,first_kana = ?,department_name = ?,blood = ?,age = ?,gender = ?,birthday = ? where employee_id = ?";
+		String sql = "update employees set last_name = ?,first_name = ?,last_kana = ?,first_kana = ?,email_address = ?,department_name = ?,blood = ?,age = ?,gender = ?,birthday = ? where employee_id = ?";
 		ps = con.prepareStatement(sql);
 
 		//プレースホルダに値をセット
@@ -200,18 +200,20 @@ public class EmployeeDAO extends BaseDAO {
 		ps.setString(3,employee.getLast_Kana());
 		//名フリガナ
 		ps.setString(4,employee.getFirst_Kana());
+		//メールアドレス
+		ps.setString(5,employee.getEmail_Address());
 		//部署名
-		ps.setString(5,employee.getDepartment_Name());
+		ps.setString(7,employee.getDepartment_Name());
 		//血液型
-		ps.setString(6,employee.getBlood());
+		ps.setString(8,employee.getBlood());
 		//年齢
-		ps.setInt(7,employee.getAge());
+		ps.setInt(9,employee.getAge());
 		//性別
-		ps.setString(8,employee.getGender());
+		ps.setString(10,employee.getGender());
 		//生年月日
-		ps.setString(9,employee.getBirthday());
+		ps.setString(11,employee.getBirthday());
 		//社員番号
-		ps.setInt(10,employee.getEmployee_Id());
+		ps.setInt(12,employee.getEmployee_Id());
 
 		//SQL文の実行
 		int ue = ps.executeUpdate();
