@@ -51,6 +51,11 @@ Employee syain = (Employee)session.getAttribute("employee");
 		</tr>
 
 		<tr class="border_style">
+			<th>メールアドレス</th>
+			<td><%=syain.getEmail_Address()%></td>
+		</tr>
+
+		<tr class="border_style">
 			<th>所属部署</th>
 			<td><%=syain.getDepartment_Name()%></td>
 		</tr>
