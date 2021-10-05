@@ -50,6 +50,7 @@ Admin manager=(Admin)session.getAttribute("admin");
 			<th class="fixed">社員ID</th>
 			<th class="fixed">氏名</th>
 			<th class="fixed">フリガナ</th>
+			<th class="fixed">メールアドレス</th>
 			<th class="fixed">所属部署</th>
 			<th class="fixed">年齢</th>
 			<th class="fixed">生年月日</th>
@@ -65,6 +66,7 @@ Admin manager=(Admin)session.getAttribute("admin");
 					<td><%=employee.getEmployee_Id()%></td>
 					<td><%=employee.getLast_Name()%> <%=employee.getFirst_Name()%></td>
 					<td><%=employee.getLast_Kana()%> <%=employee.getFirst_Kana()%></td>
+					<td><%=employee.getEmail_Address()%></td>
 					<td><%=employee.getDepartment_Name()%></td>
 					<td><%=employee.getAge()%></td>
 					<td><%=employee.getBirthday()%></td>
