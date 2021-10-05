@@ -323,7 +323,7 @@ public class EmployeeDAO extends BaseDAO {
 		Employee employee = null;
 
 		//データベースから全社員情報を取得するSQL文
-		String sql ="select employee_id,last_name,first_name,last_kana,first_kana,department_name,blood,age,birthday,gender from employees order by employee_id";
+		String sql ="select employee_id,last_name,first_name,last_kana,first_kana,email_address,department_name,blood,age,birthday,gender from employees order by employee_id";
 		ps = con.prepareStatement(sql);
 
 		//SQL文の実行
@@ -344,6 +344,8 @@ public class EmployeeDAO extends BaseDAO {
 			employee.setLast_Kana(rs.getString("last_kana"));
 			//名フリガナ
 			employee.setFirst_Kana(rs.getString("first_kana"));
+			//メールアドレス
+			employee.setEmail_Address(rs.getString("email_address"));
 			//部署名
 			employee.setDepartment_Name(rs.getString("department_name"));
 			//血液型
