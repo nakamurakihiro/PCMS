@@ -41,6 +41,7 @@ List<Machine> mlist = (List<Machine>)session.getAttribute("mlist");
 			<li>部署名:<%=syain.getDepartment_Name()%></li>
 			<li>氏名:<%=syain.getLast_Name()%><%=syain.getFirst_Name()%></li>
 			<!-- ヘッダーメニューの表示 -->
+			<li><a href="mail_box.jsp">メール</a></li>
 			<li><a href="mypage.jsp">マイページ</a></li>
 			<li><a href="employee_password_change.jsp">パスワード変更</a></li>
 			<li><a href="./Logout" onClick="return Logout_Check()">ログアウト</a></li>
