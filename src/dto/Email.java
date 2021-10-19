@@ -31,6 +31,12 @@ public class Email implements Serializable {
 	private String first_name;
 
 	/**
+	 *件名
+	 */
+	private String subject;
+
+
+	/**
 	 *メール本文
 	 */
 	private String email_text;
@@ -102,6 +108,22 @@ public class Email implements Serializable {
 	 */
 	public void setFirst_Name(String first_name){
 		this.first_name = first_name;
+	}
+
+	/**
+	 *@return subject - 件名
+	 *件名を返す
+	 */
+	public String getSubject(){
+		return subject;
+	}
+
+	/**
+	 *@param subject - 件名
+	 *件名のセット
+	 */
+	public void setSubject(String subject){
+		this.subject = subject;
 	}
 
 	/**
